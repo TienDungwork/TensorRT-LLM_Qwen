@@ -1,0 +1,18 @@
+# Central runtime config for the TensorRT Qwen service.
+# Environment variables can still override these values.
+
+model:
+  id: Qwen/Qwen3-4B
+
+tensorrt:
+  dtype: float16
+  weight_only_precision: int4
+  max_batch_size: 1
+  max_input_len: 3072
+  max_seq_len: 4096
+  max_num_tokens: 3072
+  load_model_on_cpu: 1
+  kv_cache_free_gpu_memory_fraction: 0.25
+
+api:
+  timeout_seconds: 180
