@@ -1,8 +1,7 @@
-# Central runtime config for the TensorRT Qwen service.
-# Environment variables can still override these values.
 
 model:
   id: Qwen/Qwen3-4B
+  engine_dir: engines/Qwen3-4B-int4
 
 tensorrt:
   dtype: float16

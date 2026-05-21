@@ -13,11 +13,14 @@ services:
     environment:
       HF_TOKEN: ${HF_TOKEN:-}
       HUGGING_FACE_HUB_TOKEN: ${HUGGING_FACE_HUB_TOKEN:-}
+      NVIDIA_DISABLE_REQUIRE: "1"
+      PYTHONPATH: /workspace/src
     volumes:
       - ./data:/workspace/data
       - ./resource:/workspace/resource:ro
+      - ./src:/workspace/src:ro
       - ./scripts:/workspace/scripts:ro
-    command: bash /workspace/scripts/build_engine.sh
+    command: python3 /workspace/scripts/build_engine_int4.py
 
   server:
     image: ${TENSORRT_LLM_IMAGE:-nvcr.io/nvidia/tensorrt-llm/release:1.3.0rc12}
@@ -27,13 +30,16 @@ services:
     ulimits:
       memlock: -1
       stack: 67108864
+    environment:
+      NVIDIA_DISABLE_REQUIRE: "1"
+      PYTHONPATH: /workspace/src
     volumes:
       - ./data:/workspace/data
       - ./resource:/workspace/resource:ro
-      - ./scripts:/workspace/scripts:ro
+      - ./src:/workspace/src:ro
     ports:
       - "${TRTLLM_PORT:-8000}:8000"
-    command: bash /workspace/scripts/serve_engine.sh
+    command: python3 -m tensorrt_qwen.serve
 
   api:
     build:

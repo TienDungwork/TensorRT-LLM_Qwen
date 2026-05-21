@@ -5,43 +5,31 @@ from pathlib import Path
 from typing import Any
 
 import httpx
+import yaml
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse, Response
 
 
-def _read_config_value(section: str, key: str) -> str | None:
+def _load_config() -> dict[str, Any]:
     config_path = Path(os.getenv("TENSORRT_QWEN_CONFIG", "/workspace/resource/main.yaml"))
     if not config_path.exists():
-        return None
+        return {}
+    return yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
 
-    current_section = ""
-    for raw_line in config_path.read_text(encoding="utf-8").splitlines():
-        if not raw_line.strip() or raw_line.lstrip().startswith("#"):
-            continue
-        indent = len(raw_line) - len(raw_line.lstrip(" "))
-        line = raw_line.strip()
-        if ":" not in line:
-            continue
 
-        name, value = line.split(":", 1)
-        name = name.strip()
-        value = value.split(" #", 1)[0].strip()
-        if indent == 0 and not value:
-            current_section = name
-            continue
-        if indent == 2 and current_section == section and name == key:
-            return value.strip("'\"") or None
-    return None
+CONFIG = _load_config()
+MODEL_CONFIG = CONFIG.get("model", {})
+API_CONFIG = CONFIG.get("api", {})
 
 
 TRTLLM_BASE_URL = os.getenv("TRTLLM_BASE_URL", "http://server:8000/v1").rstrip("/")
 DEFAULT_MODEL = (
     os.getenv("DEFAULT_MODEL")
-    or _read_config_value("model", "id")
+    or MODEL_CONFIG.get("id")
     or "Qwen/Qwen2.5-7B-Instruct"
 )
 TIMEOUT_SECONDS = float(
-    os.getenv("API_TIMEOUT_SECONDS") or _read_config_value("api", "timeout_seconds") or "180"
+    os.getenv("API_TIMEOUT_SECONDS") or API_CONFIG.get("timeout_seconds") or "180"
 )
 
 app = FastAPI(title="TensorRT Qwen API", version="0.1.0")
