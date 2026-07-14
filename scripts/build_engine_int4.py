@@ -94,16 +94,22 @@ def validate_legacy_int4_support(config: ServiceConfig) -> None:
         )
 
 
+def use_weight_only(precision: str) -> bool:
+    return precision.lower() in {"int4", "int8"}
+
+
 def build_engine_int4(config: ServiceConfig) -> None:
-    if config.tensorrt.weight_only_precision != "int4":
+    precision = config.tensorrt.weight_only_precision.lower()
+    if precision not in {"int4", "int8", "none", "fp16", "float16"}:
         raise ValueError(
-            "scripts/build_engine_int4 only builds int4 engines. "
+            "Unsupported weight_only_precision. Use int4, int8, or none/fp16. "
             f"Current value: {config.tensorrt.weight_only_precision}"
         )
 
     qwen_example_dir = find_qwen_example_dir()
     download_model(config)
-    validate_legacy_int4_support(config)
+    if precision == "int4":
+        validate_legacy_int4_support(config)
 
     config.model.checkpoint_dir.parent.mkdir(parents=True, exist_ok=True)
     config.model.engine_dir.parent.mkdir(parents=True, exist_ok=True)
@@ -121,41 +127,46 @@ def build_engine_int4(config: ServiceConfig) -> None:
         str(config.model.checkpoint_dir),
         "--dtype",
         config.tensorrt.dtype,
-        "--use_weight_only",
-        "--weight_only_precision",
-        "int4",
         "--workers",
         "1",
     ]
+    # INT4 weight-only is unsupported on Turing (T4/sm75). Prefer none/fp16 there.
+    if use_weight_only(precision):
+        convert_args.extend(
+            ["--use_weight_only", "--weight_only_precision", precision]
+        )
     if config.tensorrt.load_model_on_cpu:
         convert_args.append("--load_model_on_cpu")
     run_command(convert_args, cwd=qwen_example_dir)
 
-    run_command(
-        [
-            "trtllm-build",
-            "--checkpoint_dir",
-            str(config.model.checkpoint_dir),
-            "--output_dir",
-            str(config.model.engine_dir),
-            "--gemm_plugin",
-            config.tensorrt.dtype,
-            "--gpt_attention_plugin",
-            config.tensorrt.dtype,
-            "--max_batch_size",
-            str(config.tensorrt.max_batch_size),
-            "--max_input_len",
-            str(config.tensorrt.max_input_len),
-            "--max_seq_len",
-            str(config.tensorrt.max_seq_len),
-            "--max_num_tokens",
-            str(config.tensorrt.max_num_tokens),
-            "--workers",
-            "1",
-            "--monitor_memory",
-        ]
-    )
-    print(f"Built TensorRT-LLM INT4 engine at {config.model.engine_dir}", flush=True)
+    build_args = [
+        "trtllm-build",
+        "--checkpoint_dir",
+        str(config.model.checkpoint_dir),
+        "--output_dir",
+        str(config.model.engine_dir),
+        "--gemm_plugin",
+        config.tensorrt.dtype,
+        "--gpt_attention_plugin",
+        config.tensorrt.dtype,
+        "--max_batch_size",
+        str(config.tensorrt.max_batch_size),
+        "--max_input_len",
+        str(config.tensorrt.max_input_len),
+        "--max_seq_len",
+        str(config.tensorrt.max_seq_len),
+        "--max_num_tokens",
+        str(config.tensorrt.max_num_tokens),
+        "--workers",
+        "1",
+        "--monitor_memory",
+    ]
+    # Turing (T4, sm75) and older GPUs do not support fused context FMHA.
+    if env_value("TENSORRT_QWEN_CONTEXT_FMHA", "auto") == "disable":
+        build_args.extend(["--context_fmha", "disable"])
+    run_command(build_args)
+    label = precision if use_weight_only(precision) else "fp16"
+    print(f"Built TensorRT-LLM {label} engine at {config.model.engine_dir}", flush=True)
 
 
 def main() -> int:

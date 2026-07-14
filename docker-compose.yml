@@ -15,6 +15,7 @@ services:
       HUGGING_FACE_HUB_TOKEN: ${HUGGING_FACE_HUB_TOKEN:-}
       NVIDIA_DISABLE_REQUIRE: "1"
       PYTHONPATH: /workspace/src
+      TENSORRT_QWEN_CONTEXT_FMHA: ${TENSORRT_QWEN_CONTEXT_FMHA:-auto}
     volumes:
       - ./data:/workspace/data
       - ./resource:/workspace/resource:ro
@@ -33,6 +34,8 @@ services:
     environment:
       NVIDIA_DISABLE_REQUIRE: "1"
       PYTHONPATH: /workspace/src
+      TENSORRT_QWEN_BACKEND: ${TENSORRT_QWEN_BACKEND:-tensorrt}
+      TENSORRT_QWEN_KV_CACHE_FREE_GPU_MEMORY_FRACTION: ${TENSORRT_QWEN_KV_CACHE_FREE_GPU_MEMORY_FRACTION:-0.25}
     volumes:
       - ./data:/workspace/data
       - ./resource:/workspace/resource:ro
@@ -51,5 +54,5 @@ services:
     volumes:
       - ./resource:/workspace/resource:ro
     ports:
-      - "${QWEN_API_PORT:-8010}:8010"
-    command: uvicorn main:app --host 0.0.0.0 --port 8010
+      - "${QWEN_API_PORT:-7861}:7861"
+    command: uvicorn main:app --host 0.0.0.0 --port 7861

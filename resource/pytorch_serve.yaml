@@ -1,0 +1,10 @@
+dtype: float16
+
+attn_backend: VANILLA
+
+kv_cache_config:
+  free_gpu_memory_fraction: 0.25
+
+max_batch_size: 1
+max_num_tokens: 2048
+max_seq_len: 3072

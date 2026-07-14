@@ -1,1115 +1,0 @@
- Container tensorrt-qwen-builder-run-8ebce5000f8e Creating 
- Container tensorrt-qwen-builder-run-8ebce5000f8e Created 
-
-=============
-== PyTorch ==
-=============
-
-NVIDIA Release 26.02 (build 269443099)
-PyTorch Version 2.11.0a0+eb65b36
-Container image Copyright (c) 2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-Copyright (c) 2014-2024 Facebook Inc.
-Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
-Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
-Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
-Copyright (c) 2011-2013 NYU                      (Clement Farabet)
-Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
-Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
-Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
-Copyright (c) 2015      Google Inc.
-Copyright (c) 2015      Yangqing Jia
-Copyright (c) 2013-2016 The Caffe contributors
-All rights reserved.
-
-Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-
-GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
-(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
-and the Product-Specific Terms for NVIDIA AI Products
-(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
-
-NOTE: CUDA Forward Compatibility mode ENABLED.
-  Using CUDA 13.1 driver version 590.48.01 with kernel driver version 580.126.09.
-  See https://docs.nvidia.com/deploy/cuda-compatibility/ for details.
-
-Fetching 13 files:   0%|          | 0/13 [00:00<?, ?it/s]Downloading 'merges.txt' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/PtHk0z_I45atnj23IIRhTExwT3w=.31349551d90c7606f325fe0f11bbb8bd5fa0d7c7.incomplete'
-Downloading 'model-00001-of-00003.safetensors' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/Y6g195DXbsCiN_Ka1NwH6jyLkvc=.328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223.incomplete'
-Downloading 'model-00002-of-00003.safetensors' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/D5-QTaCbl9VUFv9Wr0C28eFewRc=.6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5.incomplete'
-Downloading 'generation_config.json' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/3EVKVggOldJcKSsGjSdoUCN1AyQ=.20a8a9156fc8c3f25295ca067f61fdf120d517c5.incomplete'
-Downloading '.gitattributes' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/wPaCkH-WbT7GsmxMKKrNZTV4nSM=.52373fe24473b1aa44333d318f578ae6bf04b49b.incomplete'
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/generation_config.json
-Downloading 'config.json' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/8_PA_wEVGiVa2goH2H4KQOQpvVY=.e49eccdc32f36da9c09cfa0e737084f9e0105e5e.incomplete'
-Downloading 'LICENSE' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/DhCjcNQuMpl4FL346qr3tvNUCgY=.6634c8cc3133b3848ec74b9f275acaaa1ea618ab.incomplete'
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/.gitattributes
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/merges.txt
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/LICENSE
-Fetching 13 files:   8%|▊         | 1/13 [00:00<00:06,  1.85it/s]Download complete. Moving file to /workspace/data/hf/Qwen3-4B/config.json
-Downloading 'model.safetensors.index.json' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/yVzAsSxRSINSz-tQbpx-TLpfkLU=.95c0a0059df040d75dc6c396b174382cf61d2f91.incomplete'
-Downloading 'model-00003-of-00003.safetensors' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/NmVQgThqhsRkG2FlXLh-M51MilA=.e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1.incomplete'
-Downloading 'tokenizer.json' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/HgM_lKo9sdSCfRtVg7MMFS7EKqo=.aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4.incomplete'
-Downloading 'vocab.json' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/j3m-Hy6QvBddw8RXA1uSWl1AJ0c=.4783fe10ac3adce15ac8f358ef5462739852c569.incomplete'
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/model.safetensors.index.json
-Downloading 'tokenizer_config.json' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/vzaExXFZNBay89bvlQv-ZcI6BTg=.417d038a63fa3de29cfde265caedae14d1a58d92.incomplete'
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/tokenizer_config.json
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/vocab.json
-Downloading 'README.md' to '/workspace/data/hf/Qwen3-4B/.cache/huggingface/download/Xn7B-BWUGOee2Y6hCZtEhtFu4BE=.2de5ee7eee214bb55ea33ec7505c5838a7adf7f6.incomplete'
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/README.md
-Fetching 13 files:  23%|██▎       | 3/13 [00:01<00:04,  2.29it/s]Download complete. Moving file to /workspace/data/hf/Qwen3-4B/tokenizer.json
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/model-00003-of-00003.safetensors
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/model-00002-of-00003.safetensors
-Download complete. Moving file to /workspace/data/hf/Qwen3-4B/model-00001-of-00003.safetensors
-Fetching 13 files:  54%|█████▍    | 7/13 [02:20<02:22, 23.79s/it]Fetching 13 files: 100%|██████████| 13/13 [02:20<00:00, 10.82s/it]
-/workspace/data/hf/Qwen3-4B
-Skipping import of cpp extensions due to incompatible torch version 2.11.0a0+eb65b36914.nv26.02 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
-/usr/local/lib/python3.12/dist-packages/modelopt/torch/__init__.py:36: UserWarning: transformers version 4.57.3 is incompatible with nvidia-modelopt and may cause issues. Please install recommended version with `pip install nvidia-modelopt[hf]` if working with HF models.
-  _warnings.warn(
-🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
-🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
-🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
-[TensorRT-LLM] TensorRT LLM version: 1.3.0rc12
-/app/tensorrt_llm/examples/models/core/qwen/convert_checkpoint.py:318: FutureWarning: 
-======================================================================
-LEGACY WARNING: convert_checkpoint.py
-======================================================================
-This is part of the legacy TensorRT engine-build workflow.
-New projects should use the PyTorch backend instead.
-
-  # Serve a model (recommended):
-  trtllm-serve <model_name_or_path>
-
-  # Python API:
-  from tensorrt_llm import LLM
-  llm = LLM(model='<model_name_or_path>')
-  output = llm.generate(['Hello, how are you?'])
-
-Documentation: https://nvidia.github.io/TensorRT-LLM/quick-start-guide.html
-======================================================================
-
-  emit_engine_arch_deprecation("convert_checkpoint.py")
-`torch_dtype` is deprecated! Use `dtype` instead!
-1.3.0rc12
-0it [00:00, ?it/s]4it [00:00, 23.03it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-7it [00:00, 10.63it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-9it [00:00,  9.48it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-12it [00:01,  6.36it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-14it [00:02,  4.64it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-16it [00:02,  4.07it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-20it [00:03,  5.37it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-22it [00:03,  5.81it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-26it [00:04,  6.08it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-28it [00:04,  5.22it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-30it [00:05,  4.55it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-34it [00:05,  5.86it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-36it [00:06,  6.19it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-40it [00:06,  6.16it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-42it [00:07,  5.21it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-44it [00:08,  4.41it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-48it [00:08,  5.67it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-50it [00:08,  5.94it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-54it [00:09,  6.23it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-56it [00:09,  5.16it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-58it [00:10,  4.40it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-62it [00:11,  5.62it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-64it [00:11,  5.97it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-68it [00:11,  6.13it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-70it [00:12,  5.05it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-72it [00:13,  4.40it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-76it [00:13,  5.67it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-78it [00:13,  6.03it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-82it [00:14,  6.11it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-84it [00:15,  5.04it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-86it [00:15,  4.40it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-90it [00:16,  5.70it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-92it [00:16,  6.02it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-96it [00:17,  6.21it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-98it [00:17,  5.13it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-100it [00:18,  4.48it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-104it [00:18,  5.70it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-106it [00:18,  6.05it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-110it [00:19,  6.18it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-112it [00:20,  5.12it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-114it [00:20,  4.39it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-118it [00:21,  5.63it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-120it [00:21,  5.91it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-124it [00:22,  6.13it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-126it [00:22,  5.10it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-128it [00:23,  4.46it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-132it [00:23,  5.77it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-134it [00:24,  5.87it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-138it [00:24,  5.92it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-140it [00:25,  4.86it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-142it [00:26,  4.19it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-146it [00:26,  5.34it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-148it [00:26,  5.63it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-152it [00:27,  5.96it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-154it [00:28,  4.99it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-156it [00:28,  4.27it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-160it [00:29,  5.51it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-162it [00:29,  5.85it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-166it [00:30,  5.98it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-168it [00:30,  4.98it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-170it [00:31,  4.34it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-174it [00:31,  5.59it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-176it [00:32,  5.93it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-180it [00:32,  6.03it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-182it [00:33,  4.95it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-184it [00:34,  4.35it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-188it [00:34,  5.61it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-190it [00:34,  5.95it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-194it [00:35,  6.13it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-196it [00:36,  5.09it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-198it [00:36,  4.43it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-202it [00:37,  5.72it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-204it [00:37,  6.06it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-208it [00:37,  6.23it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-210it [00:38,  5.11it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-212it [00:39,  4.47it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-216it [00:39,  5.65it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-218it [00:39,  5.93it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-222it [00:40,  6.17it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-224it [00:41,  5.09it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-226it [00:41,  4.43it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-230it [00:42,  5.69it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-232it [00:42,  6.04it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-236it [00:43,  6.18it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-238it [00:43,  5.13it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-240it [00:44,  4.49it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-244it [00:44,  5.77it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-246it [00:45,  6.12it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-250it [00:45,  6.26it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-252it [00:46,  4.94it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-254it [00:47,  4.02it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-258it [00:47,  5.28it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-260it [00:47,  5.42it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-264it [00:48,  5.75it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-266it [00:49,  4.80it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-268it [00:49,  4.23it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-272it [00:50,  5.44it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-274it [00:50,  5.80it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-278it [00:51,  5.83it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-280it [00:51,  4.85it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-282it [00:52,  4.32it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-286it [00:52,  5.60it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-288it [00:53,  5.92it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-292it [00:53,  6.12it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-294it [00:54,  5.05it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-296it [00:55,  4.35it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-300it [00:55,  5.58it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-302it [00:55,  5.90it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-306it [00:56,  6.06it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-308it [00:57,  5.04it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-310it [00:57,  4.42it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-314it [00:58,  5.68it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-316it [00:58,  6.04it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-320it [00:59,  6.19it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-322it [00:59,  5.10it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-324it [01:00,  4.44it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-328it [01:00,  5.72it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-330it [01:00,  6.01it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-334it [01:01,  6.12it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-336it [01:02,  4.98it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-338it [01:02,  4.32it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-342it [01:03,  5.60it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-344it [01:03,  5.95it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-348it [01:04,  6.21it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-350it [01:04,  5.12it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-352it [01:05,  4.45it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-356it [01:05,  5.73it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-358it [01:06,  6.07it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-362it [01:06,  6.24it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-364it [01:07,  5.18it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-366it [01:07,  4.52it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-370it [01:08,  5.78it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-372it [01:08,  5.89it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-376it [01:09,  5.72it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-378it [01:10,  4.65it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-380it [01:10,  4.12it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-384it [01:11,  5.36it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-386it [01:11,  5.64it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-390it [01:12,  5.79it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-392it [01:12,  4.67it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-394it [01:13,  4.18it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-398it [01:13,  5.38it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-400it [01:14,  5.77it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-404it [01:14,  5.98it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-406it [01:15,  4.92it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-408it [01:16,  4.24it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-412it [01:16,  5.38it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-414it [01:16,  5.67it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-418it [01:17,  5.88it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-420it [01:18,  4.93it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-422it [01:18,  4.29it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-426it [01:19,  5.43it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-428it [01:19,  5.74it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-432it [01:20,  6.00it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-434it [01:20,  4.92it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-436it [01:21,  4.35it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-440it [01:21,  5.65it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-442it [01:22,  5.95it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-446it [01:22,  6.11it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-448it [01:23,  5.00it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-450it [01:24,  4.41it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-454it [01:24,  5.71it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-456it [01:24,  6.08it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-460it [01:25,  6.27it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-462it [01:26,  5.18it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-464it [01:26,  4.52it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-468it [01:27,  5.70it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-470it [01:27,  6.02it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-474it [01:27,  6.13it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-476it [01:28,  5.07it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-478it [01:29,  4.40it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-482it [01:29,  5.66it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-484it [01:29,  5.94it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-488it [01:30,  6.11it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-490it [01:31,  5.07it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-492it [01:31,  4.46it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-496it [01:32,  5.75it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-498it [01:32,  6.10it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-502it [01:33,  6.23it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-504it [01:33,  5.12it/s][TensorRT-LLM][INFO] permute_B_rows_for_mixed_gemm
-[TensorRT-LLM][INFO] subbyte_transpose
-[TensorRT-LLM][INFO] interleave_column_major_tensor
-[TensorRT-LLM][INFO] add_bias_and_interleave_quantized_tensor_inplace
-[TensorRT-LLM][INFO] copy
-506it [01:34,  4.46it/s]510it [01:34,  6.74it/s]510it [01:34,  5.40it/s]
-Total time of converting checkpoints: 00:01:42
-Skipping import of cpp extensions due to incompatible torch version 2.11.0a0+eb65b36914.nv26.02 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
-/usr/local/lib/python3.12/dist-packages/modelopt/torch/__init__.py:36: UserWarning: transformers version 4.57.3 is incompatible with nvidia-modelopt and may cause issues. Please install recommended version with `pip install nvidia-modelopt[hf]` if working with HF models.
-  _warnings.warn(
-🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
-🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
-🚨 Config not found for parakeet. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
-[TensorRT-LLM] TensorRT LLM version: 1.3.0rc12
-/usr/local/lib/python3.12/dist-packages/tensorrt_llm/commands/build.py:424: FutureWarning: 
-======================================================================
-LEGACY WARNING: trtllm-build
-======================================================================
-This is part of the legacy TensorRT engine-build workflow.
-New projects should use the PyTorch backend instead.
-
-  # Serve a model (recommended):
-  trtllm-serve <model_name_or_path>
-
-  # Python API:
-  from tensorrt_llm import LLM
-  llm = LLM(model='<model_name_or_path>')
-  output = llm.generate(['Hello, how are you?'])
-
-Documentation: https://nvidia.github.io/TensorRT-LLM/quick-start-guide.html
-======================================================================
-
-  emit_engine_arch_deprecation("trtllm-build")
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.bert_attention_plugin to auto.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.gpt_attention_plugin to float16.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.gemm_plugin to float16.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.gemm_swiglu_plugin to None.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.fp8_rowwise_gemm_plugin to None.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.nccl_plugin to auto.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.lora_plugin to None.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.dora_plugin to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.moe_plugin to auto.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.mamba_conv1d_plugin to auto.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.low_latency_gemm_plugin to None.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.low_latency_gemm_swiglu_plugin to None.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.gemm_allreduce_plugin to None.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.context_fmha to True.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.bert_context_fmha_fp32_acc to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.remove_input_padding to True.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.norm_quant_fusion to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.reduce_fusion to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.user_buffer to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.tokens_per_block to 32.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.use_paged_context_fmha to True.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.use_fp8_context_fmha to True.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.fuse_fp4_quant to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.multiple_profiles to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.paged_state to True.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.streamingllm to False.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.use_fused_mlp to True.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.pp_reduce_scatter to False.
-[05/20/2026-02:09:22] [TRT-LLM] [W] Implicitly setting QWenConfig.seq_length = 8192
-[05/20/2026-02:09:22] [TRT-LLM] [W] Implicitly setting QWenConfig.qwen_type = qwen3
-[05/20/2026-02:09:22] [TRT-LLM] [W] Implicitly setting QWenConfig.moe_intermediate_size = 0
-[05/20/2026-02:09:22] [TRT-LLM] [W] Implicitly setting QWenConfig.moe_shared_expert_intermediate_size = 0
-[05/20/2026-02:09:22] [TRT-LLM] [W] Implicitly setting QWenConfig.tie_word_embeddings = True
-[05/20/2026-02:09:22] [TRT-LLM] [W] Provided but not required tensors: {'embed_positions', 'embed_positions_for_gpt_attention', 'rotary_inv_freq'}
-/usr/local/lib/python3.12/dist-packages/tensorrt_llm/builder.py:980: FutureWarning: 
-======================================================================
-LEGACY WARNING: builder.build()
-======================================================================
-This is part of the legacy TensorRT engine-build workflow.
-New projects should use the PyTorch backend instead.
-
-  # Serve a model (recommended):
-  trtllm-serve <model_name_or_path>
-
-  # Python API:
-  from tensorrt_llm import LLM
-  llm = LLM(model='<model_name_or_path>')
-  output = llm.generate(['Hello, how are you?'])
-
-Documentation: https://nvidia.github.io/TensorRT-LLM/quick-start-guide.html
-======================================================================
-
-  emit_engine_arch_deprecation("builder.build()")
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.dtype to float16.
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.paged_kv_cache to True.
-[05/20/2026-02:09:22] [TRT-LLM] [W] Overriding paged_state to False
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.paged_state to False.
-[05/20/2026-02:09:22] [TRT-LLM] [W] remove_input_padding is enabled, while opt_num_tokens is not set, setting to max_batch_size*max_beam_width. 
-
-[05/20/2026-02:09:22] [TRT-LLM] [W] padding removal and fMHA are both enabled, max_input_len is not required and will be ignored
-[05/20/2026-02:09:22] [TRT-LLM] [I] Set PluginConfig.use_fp8_context_fmha to False.
-[05/20/2026-02:09:22] [TRT-LLM] [W] FP8 Context FMHA is disabled because it must be used together with the fp8 quantization workflow.
-[05/20/2026-02:09:23] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 372, GPU 824 (MiB)
-[05/20/2026-02:09:24] [TRT-LLM] [I] Set PluginConfig.weight_only_quant_matmul_plugin to float16.
-[05/20/2026-02:09:24] [TRT-LLM] [I] Set PluginConfig.nccl_plugin to None.
-[05/20/2026-02:09:25] [TRT-LLM] [I] Total time of constructing network from module object 2.2335987091064453 seconds
-[05/20/2026-02:09:25] [TRT-LLM] [I] Total optimization profiles added: 1
-[05/20/2026-02:09:25] [TRT-LLM] [I] Total time to initialize the weights in network Unnamed Network 0: 00:00:00
-[05/20/2026-02:09:25] [TRT-LLM] [I] Build TensorRT engine Unnamed Network 0
-[05/20/2026-02:09:25] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU +195, GPU +2, now: CPU 793, GPU 838 (MiB)
-[05/20/2026-02:09:26] [TRT] [W] Unused Input: position_ids
-[05/20/2026-02:09:26] [TRT] [W] [RemoveDeadLayers] Input Tensor position_ids is unused or used only at compile-time, but is not being removed.
-[05/20/2026-02:09:26] [TRT] [I] Global timing cache in use. Profiling results in this builder pass will be stored.
-[05/20/2026-02:09:26] [TRT] [I] Compiler backend is used during engine build.
-[05/20/2026-02:09:34] [TRT] [I] [GraphReduction] The approximate region cut reduction algorithm is called.
-[05/20/2026-02:09:34] [TRT] [I] Detected 17 inputs and 1 output network tensors.
-[05/20/2026-02:09:43] [TRT] [I] Total Host Persistent Memory: 143216 bytes
-[05/20/2026-02:09:43] [TRT] [I] Total Device Persistent Memory: 0 bytes
-[05/20/2026-02:09:43] [TRT] [I] Max Scratch Memory: 75988992 bytes
-[05/20/2026-02:09:43] [TRT] [I] [BlockAssignment] Started assigning block shifts. This will take 702 steps to complete.
-[05/20/2026-02:09:43] [TRT] [I] [BlockAssignment] Algorithm ShiftNTopDown took 99.0278ms to assign 19 blocks to 702 nodes requiring 226991104 bytes.
-[05/20/2026-02:09:43] [TRT] [I] Total Activation Memory: 226990080 bytes
-[05/20/2026-02:09:43] [TRT] [I] Total Weights Memory: 3396133504 bytes
-[05/20/2026-02:09:43] [TRT] [I] Compiler backend is used during engine execution.
-[05/20/2026-02:10:05] [TRT] [I] Engine generation completed in 38.9472 seconds.
-[05/20/2026-02:10:05] [TRT] [I] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 0 MiB, GPU 3239 MiB
-[05/20/2026-02:10:09] [TRT] [I] [MemUsageStats] Peak memory usage during Engine building and serialization: CPU: 9121 MiB
-[05/20/2026-02:10:09] [TRT-LLM] [I] Total time of building Unnamed Network 0: 00:00:44
-[05/20/2026-02:10:09] [TRT] [I] Serialized 27 bytes of code generator cache.
-[05/20/2026-02:10:09] [TRT] [I] Serialized 180578 bytes of compilation cache.
-[05/20/2026-02:10:09] [TRT] [I] Serialized 10 timing cache entries
-[05/20/2026-02:10:09] [TRT-LLM] [I] Timing cache serialized to model.cache
-[05/20/2026-02:10:09] [TRT-LLM] [I] Build phase peak memory: 9086.76 MB, children: 17.72 MB
-[05/20/2026-02:10:10] [TRT-LLM] [I] Serializing engine to /workspace/data/engines/Qwen3-4B-int4/rank0.engine...
-[05/20/2026-02:10:13] [TRT-LLM] [I] Engine serialized. Total time: 00:00:02
-[05/20/2026-02:10:13] [TRT-LLM] [I] Total time of building all engines: 00:00:50
-Built TensorRT-LLM engine at /workspace/data/engines/Qwen3-4B-int4

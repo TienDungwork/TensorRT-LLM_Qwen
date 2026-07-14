@@ -49,7 +49,7 @@ cd services/model_service
 docker compose up -d
 ```
 
-API gateway: `http://localhost:8010/v1`.
+API gateway: `http://localhost:7861/v1`.
 
 Direct TensorRT-LLM server: `http://localhost:8000/v1`.
 
@@ -58,7 +58,7 @@ Public deploy qua nginx tập trung của project: `/home/atin/ntiendung/project
 ## Test
 
 ```bash
-curl http://localhost:8010/v1/chat/completions \
+curl http://localhost:7861/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
     "model": "Qwen/Qwen3-4B",
@@ -74,7 +74,7 @@ Run the marketing API with:
 
 ```bash
 AI_MARKETING_MODEL_BACKEND=tensorrt \
-TENSORRT_LLM_BASE_URL=http://localhost:8010/v1 \
+TENSORRT_LLM_BASE_URL=http://localhost:7861/v1 \
 TENSORRT_LLM_MODEL=Qwen/Qwen3-4B \
 TENSORRT_LLM_MAX_TOKENS=256 \
 python run_api.py
